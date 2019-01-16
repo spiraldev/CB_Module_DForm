@@ -1,0 +1,42 @@
+{
+    "name":"qb",
+    "version":"1.0.0",
+    "author":"Matt Graf",
+    "homepage":"https://github.com/spiraldev/CB_Module_DForm",
+    "documentation":"https://github.com/spiraldev/CB_Module_DForm",
+    "location":"coldbox-modules/CB_Module_DForm#v1.0.0",
+    "scripts":{
+        
+    },
+    "repository":{
+        "type":"git",
+        "URL":"https://github.com/spiraldev/CB_Module_DForm"
+    },
+    "bugs":"https://github.com/spiraldev/CB_Module_DForm",
+    "slug":"qb",
+    "shortDescription":"Form Templating",
+    "type":"modules",
+    "keywords":[
+        
+    ],
+    "private":false,
+    "projectURL":"https://github.com/spiraldev/CB_Module_DForm",
+    "devDependencies":{
+        
+    },
+    "installPaths":{
+        
+    },
+    "ignore":[
+        "**/.*",
+        "test",
+        "tests",
+        "node_modules",
+        "docs/**/*.*",
+        "gulpfile.js",
+        "package.json",
+        "*.sublime-project",
+        "server.json",
+        "yarn.lock"
+    ]
+}
