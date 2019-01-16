@@ -1,0 +1,90 @@
+#
+# The default Uni-Form form schema for Dformd.
+# "# END"= end of element
+# Available syntax
+#
+# Define an element
+# element.example_element_name=
+#   code_block
+# # END element.example_element_name
+#
+# Define an resource
+# resource.example_resource_name=
+#   resource_block
+# # END resource.example_resource_name
+#
+# when using a condition the renderer will look for the variable in the context
+# a condition variable must be a boolean.
+# {{#condition}} code_block {{/condition}}
+#
+# array loops
+# you can pass in an array in a variable and loop over it like so
+# {{%array}} repeat_code_block {{/array}}
+#
+# reserved var names [ element_Dformd_element, element_Dformd_children ]
+# $${element_Dformd_element} can only be used when there is a wrapper for your elements
+# $${element_Dformd_children} can only be used when an element has elements
+#
+# Placeholders $${variable_name} will be replaced by variables in the context
+#
+#
+#
+
+element.text=
+<input name="$${field_name}" autocomplete="nope" id="$${id}" value="$${value}" type="text" data-field_id="$${field_id}" class="$${class} form-control"{{#is_required}} required{{/is_required}} maxlength="$${maxlength}" style="$${style}"  $${data_attrs}{{#isDisabled}} disabled{{/isDisabled}}/>
+# END element.text
+
+element.email=
+<input name="$${field_name}" autocomplete="nope" id="$${id}" value="$${value}" type="email" data-field_id="$${field_id}" class="$${class} form-control" data-parsley-trigger="change"{{#is_required}} required{{/is_required}} maxlength="$${maxlength}" style="$${style}"  $${data_attrs}{{#isDisabled}} disabled{{/isDisabled}}/>
+# END element.email
+
+element.tel=
+<input name="$${field_name}" autocomplete="nope" id="$${id}" value="$${value}" type="text" data-field_id="$${field_id}" class="$${class} form-control" data-parsley-trigger="change"{{#is_required}} required{{/is_required}} maxlength="15" data-parsley-type="digits" minlength="6"  style="$${style}"  $${data_attrs}{{#isDisabled}} disabled{{/isDisabled}}/>
+# END element.tel
+
+element.date=
+<div class='input-group dateonly-datetime-wrapper' id="date-picker-wrap-$${id}">
+	<input name="$${field_name}" autocomplete="nope" id="$${id}" value="$${value}" type="text" data-date-mindate="$${date_range_start}" data-date-maxdate="$${date_range_end}" data-field_id="$${field_id}" class="$${class} form-control dateonly-datetime"{{#has_format}} data-date-format="$${date_format}" data-date-defaultdate="$${default_date}" {{/has_format}}data-parsley-trigger="change"{{#is_required}} required{{/is_required}} maxlength="$${maxlength}" style="$${style}"  $${data_attrs}{{#isDisabled}} disabled{{/isDisabled}} />
+  	<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+</div>
+# END element.date
+
+element.color=
+<input name="$${field_name}" autocomplete="nope" id="$${id}" value="$${value}" type="color" data-field_id="$${field_id}" class="$${class} form-control" data-parsley-trigger="change"{{#is_required}} required{{/is_required}} maxlength="$${maxlength}" style="$${style}"  $${data_attrs}{{#isDisabled}} disabled{{/isDisabled}}/>
+# END element.color
+
+element.datetime=
+<input name="$${field_name}" autocomplete="nope" id="$${id}" value="$${value}" type="datetime" data-field_id="$${field_id}" class="$${class} form-control" data-parsley-trigger="change"{{#is_required}} required{{/is_required}} maxlength="$${maxlength}" style="$${style}"  $${data_attrs}{{#isDisabled}} disabled{{/isDisabled}}/>
+# END element.datetime
+
+element.datetime-local=
+<input name="$${field_name}" autocomplete="nope" id="$${id}" value="$${value}" type="datetime-local" data-field_id="$${field_id}" class="$${class} form-control" data-parsley-trigger="change"{{#is_required}} required{{/is_required}} maxlength="$${maxlength}" style="$${style}"  $${data_attrs}{{#isDisabled}} disabled{{/isDisabled}}/>
+# END element.datetime-local
+
+element.month=
+<input name="$${field_name}" autocomplete="nope" id="$${id}" value="$${value}" type="month" data-field_id="$${field_id}" class="$${class} form-control" data-parsley-trigger="change"{{#is_required}} required{{/is_required}} maxlength="$${maxlength}" style="$${style}"  $${data_attrs}{{#isDisabled}} disabled{{/isDisabled}}/>
+# END element.month
+
+element.search=
+<input name="$${field_name}" autocomplete="nope" id="$${id}" value="$${value}" type="search" data-field_id="$${field_id}" class="$${class} form-control" data-parsley-trigger="change"{{#is_required}} required{{/is_required}} maxlength="$${maxlength}" style="$${style}"  $${data_attrs}{{#isDisabled}} disabled{{/isDisabled}}/>
+# END element.search
+
+element.number=
+<input name="$${field_name}" autocomplete="nope" id="$${id}" value="$${value}" data-parsley-type="number" type="number" data-field_id="$${field_id}" class="$${class} form-control" data-parsley-trigger="change"{{#is_required}} required{{/is_required}} maxlength="$${maxlength}" style="$${style}"  $${data_attrs}{{#isDisabled}} disabled{{/isDisabled}}/>
+# END element.number
+
+element.range=
+<input name="$${field_name}" autocomplete="nope" id="$${id}" value="$${value}" type="range" data-field_id="$${field_id}" class="$${class} form-control" data-parsley-trigger="change"{{#is_required}} required{{/is_required}} maxlength="$${maxlength}" style="$${style}"  $${data_attrs}{{#isDisabled}} disabled{{/isDisabled}}/>
+# END element.range
+
+element.time=
+<input name="$${field_name}" autocomplete="nope" id="$${id}" value="$${value}" type="time" data-field_id="$${field_id}" class="$${class} form-control" data-parsley-trigger="change"{{#is_required}} required{{/is_required}} maxlength="$${maxlength}" style="$${style}"  $${data_attrs}{{#isDisabled}} disabled{{/isDisabled}}/>
+# END element.time
+
+element.url=
+<input name="$${field_name}" autocomplete="nope" id="$${id}" value="$${value}" type="url" data-field_id="$${field_id}" class="$${class} form-control" data-parsley-trigger="change"{{#is_required}} required{{/is_required}} maxlength="$${maxlength}" style="$${style}"  $${data_attrs}{{#isDisabled}} disabled{{/isDisabled}}/>
+# END element.url
+
+element.week=
+<input name="$${field_name}" autocomplete="nope" id="$${id}" value="$${value}" type="week" data-field_id="$${field_id}" class="$${class} form-control" data-parsley-trigger="change"{{#is_required}} required{{/is_required}} maxlength="$${maxlength}" style="$${style}"  $${data_attrs}{{#isDisabled}} disabled{{/isDisabled}}/>
+# END element.week
