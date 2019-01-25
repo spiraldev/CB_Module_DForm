@@ -81,9 +81,17 @@ component accessors="true"
 			{
 				var element_Dformd_children = '';
 				var new_context = element.getContext();
+				var childrenArray = element.getChildren();
 
-				for( var childElement in element.getChildren() )
-				{
+				for ( var i=1; i <= arrayLen( childrenArray ); i=i+1 ) {
+					var childElement = childrenArray[i];
+					if( i > 1 ) {
+						var childContent = childElement.getContext();
+						childContent['has_previous'] = true;
+						childElement.setContext( childContent );
+						// writedump(childrenArray);
+						// abort;
+					}
 					if( element.getAutoChildWrapper() && !len( childElement.getWrapperType() ) )
 					{
 						if( len( element.getChildWrapperType() ) )
